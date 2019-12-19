@@ -20,7 +20,8 @@ RUN wget -O postgis.tar.gz "https://github.com/postgis/postgis/archive/$POSTGIS_
 
 
 RUN set -ex \
-    && apk update add --no-cache --virtual .fetch-deps \
+    && apk update
+    && apk add --no-cache --virtual .fetch-deps \
         ca-certificates \
         openssl \
         tar \
